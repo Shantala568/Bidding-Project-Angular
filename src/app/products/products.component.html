@@ -1,0 +1,72 @@
+<div *ngIf="!product">
+  Product Not Found
+</div>
+<div class="container-flex" *ngIf="product">
+    <div class="row ">
+      <div class="col-lg-7  s1">
+        <div class="image">
+          <!-- <img class="" src={{imagePath}} alt="Product " height="350vh" width="100%"/> -->
+          <img class="img-responsive text-center" src="assets/images/pic1jpg.jpg"  height="200vh"     >
+        </div>
+        <div id="desc">
+             <h3>{{product.name}}</h3>
+             <p >{{product.description}}</p>
+         <!-- <p style="font-size: 1.2em; font-weight: bold;">Original Price : {{price}} Rs</p> -->
+              
+        </div>
+        <div id="info" class="">
+              <div class="row">
+                
+                   <div class="col-lg-4 col-md-4 col-sm-4 col-4 text-center blk">
+                        Original Price <br>
+                        {{product.start_bid}}
+                   </div>
+                   <div class="col-lg-4 col-md-4 col-sm-4 col-4 text-center blk">
+                         Highest Bid <br>
+                        <!-- {{product}} -->
+                   </div>
+                   <div class="col-lg-4 col-md-4 col-sm-4 col-4 text-center blk">
+                        Time Remaining <br>
+                        0 Hrs {{product.bid_end_datetime}} Mins
+                   </div>
+                   
+              </div>
+        </div>
+        <div class="text-center" style="padding: 5PX;">
+            <button type="button" class="btn btn-outline-danger">Cancel Auction</button>
+        </div>
+      </div>
+      <div class="col-lg-4  s2 ">
+          
+        <div style="padding-top: 5px;" class="text-center">
+           <span style="font-size: 1.6em; font-weight: bold;">Bidders List</span> 
+           <!-- <input style="float: right; " type="button" value="Sort"/> -->
+           
+           
+            <hr>
+        </div>
+        <div class="lst">
+            <table class="table table-striped text-center">
+                <thead>
+                  <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Bid Price</th>
+                  </tr>
+                </thead>
+                <tbody>
+                    <!-- <tr *ngFor="let user of Bidders_list">
+                        <td>{{user.id}}</td>
+                        <td>{{user.name}}</td>
+                        <td>{{user.bid}}</td> 
+                   </tr>   -->
+                </tbody>
+              </table>
+            
+        </div>
+          
+        
+      </div>
+      
+    </div>
+  </div>

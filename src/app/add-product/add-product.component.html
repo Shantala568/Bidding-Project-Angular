@@ -1,0 +1,104 @@
+<div class="container-fluid ">
+  <div class="row">
+    <div class="col-lg-2 bg-dark">
+      <app-admindashboard></app-admindashboard>
+   </div>
+   <div class="col-lg-1">
+
+   </div>
+   <div class="col-lg-9 mt-5 ">
+     <div class="container-fluid ">
+       <div class="col-lg-12 ">
+         <div class="card temp">
+           <div class="card-body">
+             <form action="" id="manage-product">
+               <input type="hidden" name="id" >
+                   <h4 class="text-center" >Add Product </h4>
+               <hr>
+               <div class="form-group row">
+                 <div class="col-md-4">
+                   <label for="" class="control-label">Name</label>
+                   <input type="text" class="form-control" name="name"   required>
+                 </div>
+
+               </div>
+
+               <div class="form-group row mt-3">
+                 <div class="col-md-4">
+
+                   <select class="form-select" aria-label="Default select example">
+                     <option selected>Select a Category</option>
+                     <option value="1">Mobiles</option>
+                     <option value="2">Laptops</option>
+                     <option value="3">Earphones</option>
+                     </select>
+
+                 </div>
+
+               </div>
+
+               <div class="form-group row mt-3" >
+                 <div class="col-md-10">
+                   <label for="" class="control-label">Description</label>
+                   <textarea name="description" id="description" class="form-control" cols="30" rows="5" required></textarea>
+                 </div>
+
+               </div>
+
+               <div class="form-group row mt-3">
+                 <div class="col-md-4">
+                   <label for="" class="control-label">Regular Price</label>
+                   <input type="number" class="form-control text-right" name="regular_price" >
+                 </div>
+
+
+               </div>
+               <div class="form-group row mt-3">
+                 <div class="col-md-4">
+                   <label for="" class="control-label">Starting Bidding Amount</label>
+                   <input type="number" class="form-control text-right" name="start_bid" >
+                 </div>
+                 <div class="col-md-4">
+                   <label for="" class="control-label">Bidding End Date/Time</label>
+                   <input type="text" class="form-control datetimepicker" name="bid_end_datetime" >
+                 </div>
+               </div>
+               <div class=" row form-group mt-3" >
+                 <div class="col-md-5">
+                   <label for="" class="control-label">Product Image</label>
+                   <input type="file" class="form-control" name="img" >
+                 </div>
+
+                 <div class="col-md-5">
+                   <!-- <img src="<?php echo isset($img_fname) ? 'assets/uploads/'.$img_fname :'' ?>" alt="" id="img_path-field"> -->
+                 </div>
+               </div>
+               <div class="row">
+                 <div class="col-md-12 mt-3">
+                   <button class="btn btn-block btn-md btn-outline-dark "> Save</button>
+                 </div>
+               </div>
+             </form>
+           </div>
+         </div>
+       </div>
+     </div>
+   </div>
+  </div>
+</div>
+
+
+
+
+<div class="container-fluid " style="border-top: 1px solid black;">
+  <footer class="py-3">
+    <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+      <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Home</a></li>
+      <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Contact</a></li>
+      <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Address</a></li>
+      <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">FAQs</a></li>
+      <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">About</a></li>
+    </ul>
+    <p class="text-center text-body-secondary" style="color: black;">&copy; 2023 Company, Inc</p>
+  </footer>
+</div>

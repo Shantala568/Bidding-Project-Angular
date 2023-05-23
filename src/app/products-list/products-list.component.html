@@ -1,0 +1,134 @@
+<div class="container-fluid">
+  <div class="row">
+      <div class="col-lg-2 bg-dark">
+        <app-admindashboard></app-admindashboard>
+      </div>
+      <div class="col-lg-1">
+
+      </div>
+      <div class="col-lg-9">
+        <div class="container-fluid">
+
+          <div class="col-lg-12">
+            <div class="row mb-4 mt-4">
+              <div class="col-md-12">
+
+              </div>
+            </div>
+            <div class="row">
+              <!-- FORM Panel -->
+
+
+              <div class="col-md-12">
+                <div class="card">
+                  <div class="card-header">
+                    <b>List of Products</b>
+                    <span class="float:right">
+                      <a class="btn btn-primary btn-block btn-sm col-sm-2 float-end"  id="new_product"  routerLink="/addproduct">
+                  <i class="fa fa-plus" style="float: right;"></i> New Entry
+                </a>
+              </span>
+                  </div>
+                  <div class="card-body">
+                    <table class="table table-condensed table-bordered table-hover">
+                      <thead>
+                        <tr>
+                          <th class="text-center">Product ID</th>
+                          <th class="">Img</th>
+                          <th class="">Category</th>
+                          <th class="">Product</th>
+                          <th class="">Other Info</th>
+                          <th class="text-center">Action</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+
+                        <tr *ngFor="let product of  products$ |async">
+                          <td class="text-center">{{product.id}}</td>
+                          <td class="">
+                            <img src="{{environment.BASE_URL}}/image/{{product.id}}" />
+                          </td>
+                          <td>
+                            {{product.category_id}}
+                           </td>
+                          <td class="">
+                          <p><small><b>Product Name : {{product.name}}</b></small></p>
+                          <p><small><b>Description : {{product.description}}</b></small></p>
+
+                          </td>
+                          <td>
+                            <p><small>Regular Price: {{product.regular_price}}</small></p>
+                            <p><small>Start Price: {{product.start_bid}}</small></p>
+                             <p><small>End Date/Time: {{product.bid_end_datetime}}</small></p>
+                             <!-- <p><small>Highest Bid: {{product.h_bid}}</small></p> -->
+                             <!-- <p><small>Total Bids: {{product.t_bids}}</small></p> -->
+                          </td>
+                          <td class="text-center">
+                            <div class="btn-group" role="group" aria-label="Basic example">
+                              <button type="button" class="btn btn-primary">View</button>
+                              <button type="button" class="btn btn-success" routerLink="/manageproduct" >Edit</button>
+                              <button type="button" class="btn btn-danger" (click)="pdelModal()">Delete</button>
+                            </div>
+                          </td>
+                        </tr>
+
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+              <!-- Table Panel -->
+            </div>
+          </div>
+
+        </div>
+      </div>
+  </div>
+</div>
+
+
+
+
+
+
+<!-- Delete Modal -->
+
+<div *ngIf="pshowdeletemodal" class="modal mt-5 " id="box" tabindex="-1" role="dialog"
+style="display: block !important">
+<div class="modal-dialog" role="document">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h4 class="modal-title">Delete Product</h4>
+      <button type="button" class="close" aria-label="Close" (click)="onCloseHandleddel()"><span
+          aria-hidden="true">&times;</span></button>
+    </div>
+    <div class="modal-body">
+      <h6>Are you sure you want to delete the product?</h6>
+    </div>
+    <div class="modal-footer">
+      <div class="btn-group" role="group" aria-label="Basic example">
+        <button type="button" class="btn btn-success" (click)="onCloseHandleddel()">Submit</button>
+        <button type="button" class="btn btn-danger" (click)="onCloseHandleddel()">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+</div>
+</div>
+
+
+<!-- Footer -->
+
+
+<div class="container-fluid " style="border-top: 1px solid black;">
+  <footer class="py-3">
+    <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+      <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Home</a></li>
+      <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Contact</a></li>
+      <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Address</a></li>
+      <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">FAQs</a></li>
+      <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">About</a></li>
+    </ul>
+    <p class="text-center text-body-secondary" style="color: black;">&copy; 2023 Company, Inc</p>
+  </footer>
+</div>
